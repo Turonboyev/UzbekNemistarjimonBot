@@ -1,0 +1,15 @@
+# Python 3.11.8 slim versiyasini ishlatamiz
+FROM python:3.11.8-slim
+
+# Ishchi papka
+WORKDIR /app
+
+# Loyihani konteynerga nusxalash
+COPY . /app
+
+# pipni yangilash va kerakli kutubxonalarni o'rnatish
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+
+# Botni ishga tushirish
+CMD ["python", "main.py"]
